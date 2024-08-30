@@ -51,8 +51,12 @@
 		D3E6FB842C8206DB0040319A /* ExploreItaly */ = {
 			isa = PBXGroup;
 			children = (
+				D3E6FB982C8209000040319A /* Font */,
+				D3E6FB972C8208F80040319A /* Extension */,
+				D3E6FB962C8208DE0040319A /* Model */,
+				D3E6FB952C8208CF0040319A /* Data */,
+				D3E6FB932C8208AD0040319A /* View */,
 				D3E6FB852C8206DB0040319A /* ExploreItalyApp.swift */,
-				D3E6FB872C8206DB0040319A /* ContentView.swift */,
 				D3E6FB892C8206DF0040319A /* Assets.xcassets */,
 				D3E6FB8B2C8206DF0040319A /* Preview Content */,
 			);
@@ -65,6 +69,42 @@
 				D3E6FB8C2C8206DF0040319A /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		D3E6FB932C8208AD0040319A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D3E6FB872C8206DB0040319A /* ContentView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D3E6FB952C8208CF0040319A /* Data */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		D3E6FB962C8208DE0040319A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D3E6FB972C8208F80040319A /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		D3E6FB982C8209000040319A /* Font */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Font;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
