@@ -9,7 +9,23 @@ import SwiftUI
 
 struct FavoriteView: View {
     var body: some View {
-        Color.green
+        NavigationView {
+            VStack {
+                
+            }
+            .padding(.horizontal)
+            .navigationTitle("Favorites❤️")
+            .toolbar{
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button {
+                        print("dark mode / light mode")
+                    } label: {
+                        Image(systemName: "grid")
+                    }
+
+                }
+            }
+        }
     }
 }
 

@@ -9,7 +9,13 @@ import SwiftUI
 
 struct SettingView: View {
     var body: some View {
-        Color.red
+        NavigationView {
+            VStack {
+                
+            }
+            .padding(.horizontal)
+            .navigationTitle("Settings")
+        }
     }
 }
 

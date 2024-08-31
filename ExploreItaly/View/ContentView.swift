@@ -10,7 +10,7 @@ import SwiftUI
 struct ContentView: View {
     @State private var currentIndex : Int = 1
     var body: some View {
-        NavigationView {
+        
             ZStack(alignment:.bottom) {
                 if currentIndex == 0 {
                     FavoriteView()
@@ -26,19 +26,6 @@ struct ContentView: View {
                     
                 
             }
-            .edgesIgnoringSafeArea(.bottom)
-            .navigationTitle("Explore Italy")
-            .toolbar{
-                ToolbarItem(placement: .topBarTrailing) {
-                    Button {
-                        print("dark mode / light mode")
-                    } label: {
-                        Image(systemName: "moon")
-                    }
-
-                }
-            }
-        }
         
     }
 }
