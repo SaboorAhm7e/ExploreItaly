@@ -12,6 +12,7 @@
 		D395A1F22C822F570077E425 /* FavoriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D395A1F12C822F570077E425 /* FavoriteView.swift */; };
 		D395A1F42C822F640077E425 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D395A1F32C822F640077E425 /* SettingView.swift */; };
 		D395A1F62C822F9F0077E425 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D395A1F52C822F9F0077E425 /* HomeView.swift */; };
+		D3E061962C848241009D42E1 /* PlaceItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E061952C848241009D42E1 /* PlaceItemView.swift */; };
 		D3E6FB862C8206DB0040319A /* ExploreItalyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E6FB852C8206DB0040319A /* ExploreItalyApp.swift */; };
 		D3E6FB882C8206DB0040319A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E6FB872C8206DB0040319A /* ContentView.swift */; };
 		D3E6FB8A2C8206DF0040319A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3E6FB892C8206DF0040319A /* Assets.xcassets */; };
@@ -24,6 +25,7 @@
 		D395A1F12C822F570077E425 /* FavoriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteView.swift; sourceTree = "<group>"; };
 		D395A1F32C822F640077E425 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		D395A1F52C822F9F0077E425 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		D3E061952C848241009D42E1 /* PlaceItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceItemView.swift; sourceTree = "<group>"; };
 		D3E6FB822C8206DB0040319A /* ExploreItaly.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExploreItaly.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3E6FB852C8206DB0040319A /* ExploreItalyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreItalyApp.swift; sourceTree = "<group>"; };
 		D3E6FB872C8206DB0040319A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -47,6 +49,7 @@
 			children = (
 				D395A1EF2C8212640077E425 /* CustomTabBar.swift */,
 				D33C038C2C83490100F8728C /* SectionHeaderView.swift */,
+				D3E061952C848241009D42E1 /* PlaceItemView.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -205,6 +208,7 @@
 				D3E6FB882C8206DB0040319A /* ContentView.swift in Sources */,
 				D395A1F62C822F9F0077E425 /* HomeView.swift in Sources */,
 				D33C038D2C83490100F8728C /* SectionHeaderView.swift in Sources */,
+				D3E061962C848241009D42E1 /* PlaceItemView.swift in Sources */,
 				D395A1F02C8212640077E425 /* CustomTabBar.swift in Sources */,
 				D3E6FB862C8206DB0040319A /* ExploreItalyApp.swift in Sources */,
 			);

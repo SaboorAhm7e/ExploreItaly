@@ -22,7 +22,7 @@ struct ContentView: View {
                 
                 
                 CustomTabBar(currentIndex:$currentIndex)
-                    .offset(y:-20)
+                    .offset(y:-10)
                     
                 
             }
