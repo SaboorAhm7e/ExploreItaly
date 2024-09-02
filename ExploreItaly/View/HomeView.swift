@@ -18,9 +18,26 @@ struct HomeView: View {
                         .resizable()
                         .scaledToFit()
                     // Section Header
-                    SectionHeaderView(sectionTitle: "Cities", completion: {
-                        print("see all cities")
-                    })
+                    
+                    HStack {
+                        Text("Cities")
+                            .font(.title)
+                            .fontWeight(.bold)
+                        Spacer()
+                        NavigationLink {
+                            CityListingView()
+                        } label: {
+                            HStack {
+                                Text("See All")
+                                Image(systemName: "chevron.right")
+                            }
+                        }
+                        
+                    }
+                    
+//                    SectionHeaderView(sectionTitle: "Cities", completion: {
+//                        print("see all cities")
+//                    })
                     ScrollView(.horizontal,showsIndicators:false) {
                         HStack(spacing:10) {
                             ForEach(cities,id:\.self) { city in

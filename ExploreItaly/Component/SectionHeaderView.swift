@@ -16,12 +16,18 @@ struct SectionHeaderView: View {
                 .font(.title)
                 .fontWeight(.bold)
             Spacer()
-            Button {
-                completion!()
+            NavigationLink {
+                CityListingView()
             } label: {
-                Text("See All")
-                Image(systemName: "chevron.right")
+                Button {
+                    completion!()
+                } label: {
+                    Text("See All")
+                    Image(systemName: "chevron.right")
+                }
             }
+
+            
         }
     }
 }

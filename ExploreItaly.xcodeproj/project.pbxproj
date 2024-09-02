@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D3150CF92C85B0C100F7A5F0 /* CityListingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3150CF82C85B0C100F7A5F0 /* CityListingView.swift */; };
+		D3150CFB2C85B48B00F7A5F0 /* CityDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3150CFA2C85B48B00F7A5F0 /* CityDetailView.swift */; };
 		D33C038D2C83490100F8728C /* SectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33C038C2C83490100F8728C /* SectionHeaderView.swift */; };
 		D395A1F02C8212640077E425 /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D395A1EF2C8212640077E425 /* CustomTabBar.swift */; };
 		D395A1F22C822F570077E425 /* FavoriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D395A1F12C822F570077E425 /* FavoriteView.swift */; };
@@ -20,6 +22,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D3150CF82C85B0C100F7A5F0 /* CityListingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityListingView.swift; sourceTree = "<group>"; };
+		D3150CFA2C85B48B00F7A5F0 /* CityDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityDetailView.swift; sourceTree = "<group>"; };
 		D33C038C2C83490100F8728C /* SectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeaderView.swift; sourceTree = "<group>"; };
 		D395A1EF2C8212640077E425 /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
 		D395A1F12C822F570077E425 /* FavoriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteView.swift; sourceTree = "<group>"; };
@@ -44,6 +48,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D3150CF72C85B0A900F7A5F0 /* City */ = {
+			isa = PBXGroup;
+			children = (
+				D3150CF82C85B0C100F7A5F0 /* CityListingView.swift */,
+				D3150CFA2C85B48B00F7A5F0 /* CityDetailView.swift */,
+			);
+			path = City;
+			sourceTree = "<group>";
+		};
 		D395A1EE2C82123A0077E425 /* Component */ = {
 			isa = PBXGroup;
 			children = (
@@ -97,6 +110,7 @@
 		D3E6FB932C8208AD0040319A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D3150CF72C85B0A900F7A5F0 /* City */,
 				D3E6FB872C8206DB0040319A /* ContentView.swift */,
 				D395A1F12C822F570077E425 /* FavoriteView.swift */,
 				D395A1F32C822F640077E425 /* SettingView.swift */,
@@ -203,9 +217,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3150CF92C85B0C100F7A5F0 /* CityListingView.swift in Sources */,
 				D395A1F22C822F570077E425 /* FavoriteView.swift in Sources */,
 				D395A1F42C822F640077E425 /* SettingView.swift in Sources */,
 				D3E6FB882C8206DB0040319A /* ContentView.swift in Sources */,
+				D3150CFB2C85B48B00F7A5F0 /* CityDetailView.swift in Sources */,
 				D395A1F62C822F9F0077E425 /* HomeView.swift in Sources */,
 				D33C038D2C83490100F8728C /* SectionHeaderView.swift in Sources */,
 				D3E061962C848241009D42E1 /* PlaceItemView.swift in Sources */,
@@ -361,10 +377,11 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -393,10 +410,11 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
