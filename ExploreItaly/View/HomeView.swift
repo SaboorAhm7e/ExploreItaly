@@ -66,11 +66,23 @@ struct HomeView: View {
                     
                     
                    
+                    //PlacesGridView
                     
-                    
-                    SectionHeaderView(sectionTitle: "Places", completion: {
-                        print("see all places")
-                    })
+                    HStack {
+                        Text("Places")
+                            .font(.title)
+                            .fontWeight(.bold)
+                        Spacer()
+                        NavigationLink {
+                            PlacesGridView()
+                        } label: {
+                            HStack {
+                                Text("See All")
+                                Image(systemName: "chevron.right")
+                            }
+                        }
+                        
+                    }
                     
                     
                    
