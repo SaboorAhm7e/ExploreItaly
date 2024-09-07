@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct SectionHeaderView: View {
+    @Binding var showTabBar : Bool
     var sectionTitle = ""
     var completion : (()-> ())?
     var body: some View {
@@ -17,7 +18,7 @@ struct SectionHeaderView: View {
                 .fontWeight(.bold)
             Spacer()
             NavigationLink {
-                CityListingView()
+                CityListingView(showTabBar: $showTabBar)
             } label: {
                 Button {
                     completion!()
@@ -32,6 +33,6 @@ struct SectionHeaderView: View {
     }
 }
 
-#Preview {
-    SectionHeaderView()
-}
+//#Preview {
+//    SectionHeaderView()
+//}

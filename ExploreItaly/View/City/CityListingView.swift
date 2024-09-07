@@ -8,20 +8,21 @@
 import SwiftUI
 
 struct CityListingView: View {
-    var cities : [String] = ["Rome","Milan","Venice"]
+    @Binding var showTabBar : Bool
+    let cities : [CityModel] = Bundle.main.decode([CityModel].self, from: "Cities.json")
     var body: some View {
         List {
-            ForEach(cities,id: \.self) { item in
+            ForEach(cities,id: \.city_id) { city in
                 NavigationLink {
-                    CityDetailView(name: item)
+                    CityDetailView(showTabBar: $showTabBar, city: city)
                 } label: {
                     HStack(alignment:.top) {
-                        Image(item)
+                        Image(city.city_cover)
                             .resizable()
                             .frame(width:70,height: 70)
                             .cornerRadius(20)
                         VStack(alignment:.leading) {
-                            Text(item)
+                            Text(city.city_name)
                                 .font(.headline)
                             Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed hendrerit enim eget ex cursus condimentum. Maecenas nulla massa, finibus laoreet varius vel, congue in turpis. Sed iaculis porta egestas. Donec eu feugiat arcu. Aliquam ligula orci, fermentum porta urna id, posuere maximus ex. Nunc a turpis metus. Phasellus vel scelerisque ante. Sed id velit pellentesque, malesuada velit quis, molestie orci. Donec dolor tortor, finibus quis tortor ut, finibus ullamcorper magna.")
                                 .font(.caption)
@@ -34,11 +35,23 @@ struct CityListingView: View {
             }
             .listRowSeparator(.hidden)
         } //: List
-        .listStyle(.inset)
+        .onAppear {
+            withAnimation(.easeInOut(duration: 0.5)) {
+                showTabBar = false
+            }
+            
+        }
+        .onDisappear {
+            withAnimation(.easeInOut(duration: 0.5)) {
+                showTabBar = true
+            }
+        }
+        .scrollIndicators(.hidden)
+        //.listStyle(.inset)
         .navigationTitle("Cities")
     }
 }
 
-#Preview {
-    CityListingView()
-}
+//#Preview {
+//    CityListingView(showTabBar: false)
+//}

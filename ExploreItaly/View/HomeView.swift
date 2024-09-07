@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct HomeView: View {
+    @Binding var showTabBar : Bool
     var cities = ["Rome","Milan","Venice"]
     var body: some View {
         NavigationView {
@@ -25,7 +26,7 @@ struct HomeView: View {
                             .fontWeight(.bold)
                         Spacer()
                         NavigationLink {
-                            CityListingView()
+                            CityListingView(showTabBar: $showTabBar)
                         } label: {
                             HStack {
                                 Text("See All")
@@ -120,6 +121,6 @@ struct HomeView: View {
     }
 }
 
-#Preview {
-    HomeView()
-}
+//#Preview {
+//    HomeView()
+//}

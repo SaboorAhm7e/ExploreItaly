@@ -9,9 +9,15 @@ import SwiftUI
 
 @main
 struct ExploreItalyApp: App {
+    @AppStorage("showsOnboarding") var showOnboarding : Bool = true
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            if showOnboarding {
+                OnboardingView()
+            } else {
+                ContentView()
+            }
+            
         }
     }
 }

@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
+    @AppStorage("showTabBar") var showTabBar : Bool = true
     @State private var currentIndex : Int = 1
     var body: some View {
         
@@ -15,17 +16,20 @@ struct ContentView: View {
                 if currentIndex == 0 {
                     FavoriteView()
                 } else if currentIndex == 1 {
-                    HomeView()
+                    HomeView(showTabBar:$showTabBar)
                 } else {
                     SettingView()
                 }
                 
+                if showTabBar {
+                    CustomTabBar(currentIndex:$currentIndex)
+                        .offset(y:-10)
+                }
                 
-                CustomTabBar(currentIndex:$currentIndex)
-                    .offset(y:-10)
                     
                 
             }
+            .animation(.easeInOut, value: showTabBar)
         
     }
 }

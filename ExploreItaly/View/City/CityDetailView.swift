@@ -8,16 +8,16 @@
 import SwiftUI
 
 struct CityDetailView: View {
-    var cities = ["Rome","Milan","Venice"]
-    var name : String = "Rome"
+    @Binding var showTabBar : Bool
+    var city : CityModel?
     var body: some View {
         ScrollView(.vertical,showsIndicators: false) {
             VStack {
-                Image(name)
+                Image(city?.city_cover ?? "Rome")
                     .resizable()
                     .frame(height: 200)
                 HStack {
-                    Text("About \(name)")
+                    Text("About \(city?.city_name ?? "")")
                         .font(.title)
                         .fontWeight(.bold)
                     Spacer()
@@ -49,12 +49,12 @@ struct CityDetailView: View {
                 }
                
                 HStack {
-                    Text("Places in \(name)")
+                    Text("Places in \(city?.city_name ?? "")")
                         .font(.title)
                         .fontWeight(.bold)
                     Spacer()
                     NavigationLink {
-                        CityListingView()
+                        CityListingView(showTabBar: $showTabBar)
                     } label: {
                         HStack {
                             Text("See All")
@@ -93,11 +93,22 @@ struct CityDetailView: View {
                 Spacer()
             }
         }
+        .onAppear {
+            withAnimation(.easeInOut(duration: 0.5)) {
+                showTabBar = false
+            }
+            
+        }
+        .onDisappear {
+            withAnimation(.easeInOut(duration: 0.5)) {
+                showTabBar = true
+            }
+        }
         .padding(.horizontal)
-        .navigationTitle(name)
+        .navigationTitle(city?.city_name ?? "City Name")
     }
 }
 
-#Preview {
-    CityDetailView()
-}
+//#Preview {
+//    CityDetailView()
+//}
