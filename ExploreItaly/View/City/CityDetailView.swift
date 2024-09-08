@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CityDetailView: View {
-    @Binding var showTabBar : Bool
+    
     var city : CityModel?
     var body: some View {
         ScrollView(.vertical,showsIndicators: false) {
@@ -54,7 +54,7 @@ struct CityDetailView: View {
                         .fontWeight(.bold)
                     Spacer()
                     NavigationLink {
-                        CityListingView(showTabBar: $showTabBar)
+                        CityListingView()
                     } label: {
                         HStack {
                             Text("See All")
@@ -91,17 +91,6 @@ struct CityDetailView: View {
                 
                 
                 Spacer()
-            }
-        }
-        .onAppear {
-            withAnimation(.easeInOut(duration: 0.5)) {
-                showTabBar = false
-            }
-            
-        }
-        .onDisappear {
-            withAnimation(.easeInOut(duration: 0.5)) {
-                showTabBar = true
             }
         }
         .padding(.horizontal)

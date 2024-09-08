@@ -12,24 +12,23 @@ struct ContentView: View {
     @State private var currentIndex : Int = 1
     var body: some View {
         
-            ZStack(alignment:.bottom) {
-                if currentIndex == 0 {
-                    FavoriteView()
-                } else if currentIndex == 1 {
-                    HomeView(showTabBar:$showTabBar)
-                } else {
-                    SettingView()
+        TabView {
+            HomeView()
+                .tabItem {
+                    Image(systemName: "house")
+                    Text("Home")
                 }
-                
-                if showTabBar {
-                    CustomTabBar(currentIndex:$currentIndex)
-                        .offset(y:-10)
+            FavoriteView()
+                .tabItem {
+                    Image(systemName: "heart")
+                    Text("Favorite")
                 }
-                
-                    
-                
-            }
-            .animation(.easeInOut, value: showTabBar)
+            SettingView()
+                .tabItem {
+                    Image(systemName: "gear")
+                    Text("Setting")
+                }
+        }
         
     }
 }

@@ -1,0 +1,32 @@
+[
+{
+    "place_id" : 1,
+    "city_id" : 1,
+    "place_name" : "Colosseum",
+    "place_cover" : "Colosseum-cover",
+    "place_lat" : "",
+    "place_long" : "",
+    "place_images" : ["",""],
+    "place_description" : "",
+},
+{
+    "place_id" : 2,
+    "city_id" : 1,
+    "place_name" : "Piazza Navona",
+    "place_cover" : "Piazza-Navona-cover",
+    "place_lat" : "",
+    "place_long" : "",
+    "place_images" : ["",""],
+    "place_description" : "",
+},
+{
+    "place_id" : 3,
+    "city_id" : 1,
+    "place_name" : "Trevi Fountain",
+    "place_cover" : "Trevi-Fountain-cover",
+    "place_lat" : "",
+    "place_long" : "",
+    "place_images" : ["",""],
+    "place_description" : "",
+}
+]

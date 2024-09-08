@@ -8,13 +8,12 @@
 import SwiftUI
 
 struct CityListingView: View {
-    @Binding var showTabBar : Bool
     let cities : [CityModel] = Bundle.main.decode([CityModel].self, from: "Cities.json")
     var body: some View {
         List {
             ForEach(cities,id: \.city_id) { city in
                 NavigationLink {
-                    CityDetailView(showTabBar: $showTabBar, city: city)
+                    CityDetailView(city: city)
                 } label: {
                     HStack(alignment:.top) {
                         Image(city.city_cover)
@@ -35,17 +34,6 @@ struct CityListingView: View {
             }
             .listRowSeparator(.hidden)
         } //: List
-        .onAppear {
-            withAnimation(.easeInOut(duration: 0.5)) {
-                showTabBar = false
-            }
-            
-        }
-        .onDisappear {
-            withAnimation(.easeInOut(duration: 0.5)) {
-                showTabBar = true
-            }
-        }
         .scrollIndicators(.hidden)
         //.listStyle(.inset)
         .navigationTitle("Cities")

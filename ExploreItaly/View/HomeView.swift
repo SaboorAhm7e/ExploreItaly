@@ -8,8 +8,11 @@
 import SwiftUI
 
 struct HomeView: View {
-    @Binding var showTabBar : Bool
-    var cities = ["Rome","Milan","Venice"]
+
+    // MARK: - properties
+    let cities : [CityModel] = Bundle.main.decode([CityModel].self, from: "Cities.json")
+    let places : [PlaceModel] = Bundle.main.decode([PlaceModel].self, from: "Places.json")
+    // MARK: - body
     var body: some View {
         NavigationView {
             ScrollView(.vertical,showsIndicators:false) {
@@ -26,7 +29,7 @@ struct HomeView: View {
                             .fontWeight(.bold)
                         Spacer()
                         NavigationLink {
-                            CityListingView(showTabBar: $showTabBar)
+                            CityListingView()
                         } label: {
                             HStack {
                                 Text("See All")
@@ -36,17 +39,14 @@ struct HomeView: View {
                         
                     }
                     
-//                    SectionHeaderView(sectionTitle: "Cities", completion: {
-//                        print("see all cities")
-//                    })
                     ScrollView(.horizontal,showsIndicators:false) {
                         HStack(spacing:10) {
-                            ForEach(cities,id:\.self) { city in
+                            ForEach(0...4,id:\.self) { i in
                                 ZStack(alignment:.bottomLeading) {
-                                    Image(city)
+                                    Image(cities[i].city_cover)
                                         .resizable()
                                         .clipShape(RoundedRectangle(cornerRadius: 20))
-                                    Text(city)
+                                    Text(cities[i].city_name)
                                         .font(.title2)
                                         .fontWeight(.bold)
                                         .fontDesign(.rounded)
@@ -90,10 +90,9 @@ struct HomeView: View {
                     
                     ScrollView(.horizontal,showsIndicators:false) {
                         HStack(spacing:10) {
-                            
-                            PlaceItemView(image: "Venice", name: "Catholic Curch")
-                            PlaceItemView(image: "Milan", name: "Folorida Meuseum Los Angles")
-                            PlaceItemView(image: "Rome", name: "Marina Bay")
+                            ForEach(places,id:\.place_id) { place in
+                                PlaceItemView(image: place.place_cover, name: place.place_name)
+                            }
                         }
                         .frame(height:260)
                     }
@@ -121,6 +120,6 @@ struct HomeView: View {
     }
 }
 
-//#Preview {
-//    HomeView()
-//}
+#Preview {
+    HomeView()
+}

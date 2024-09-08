@@ -25,7 +25,7 @@ struct PlaceItemView: View {
                     .multilineTextAlignment(.leading)
                     .font(.headline)
                     .fontWeight(.bold)
-                    .foregroundStyle(Color.secondary)
+                    .foregroundStyle(Color.black)
                     .padding(.leading,5)
             }
            

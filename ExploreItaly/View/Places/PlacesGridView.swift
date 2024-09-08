@@ -8,26 +8,29 @@
 import SwiftUI
 
 struct PlacesGridView: View {
+    let places : [PlaceModel] = Bundle.main.decode([PlaceModel].self, from: "Places.json")
     let colum = [GridItem(.flexible()),GridItem(.flexible())]
     var body: some View {
         VStack {
             ScrollView(.vertical,showsIndicators: false) {
                 LazyVGrid(columns:colum) {
-                    ForEach(0...7,id: \.self) { item in
+                    ForEach(places,id: \.place_id) { item in
                         NavigationLink {
-                            PlaceDetailView(name: "Milan")
+                            PlaceDetailView(name: item)
                         } label: {
                             ZStack {
-                                Color.white
-                                VStack(alignment:.leading,spacing: 0) {
-                                    Image("Milan")
+                                Color.secondary.opacity(0.5)
+                                VStack(alignment:.center,spacing: 0) {
+                                    Image(item.place_cover)
                                         .resizable()
-                                        //.scaledToFit()
                                         .frame(height:200)
-                                    Text("Milan")
+                                    
+                                    Text(item.place_name)
                                         .font(.title3)
                                         .fontWeight(.bold)
+                                        .foregroundStyle(Color.white)
                                 }
+                                
                                 .padding(.bottom,10)
                             
                             }

@@ -18,7 +18,7 @@ struct SectionHeaderView: View {
                 .fontWeight(.bold)
             Spacer()
             NavigationLink {
-                CityListingView(showTabBar: $showTabBar)
+                CityListingView()
             } label: {
                 Button {
                     completion!()

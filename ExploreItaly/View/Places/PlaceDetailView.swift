@@ -8,15 +8,15 @@
 import SwiftUI
 
 struct PlaceDetailView: View {
-    var name = ""
+    var name : PlaceModel
     @State private var isFavorite : Bool = false
     var body: some View {
         VStack {
-            Image(name)
+            Image(name.place_cover)
                 .resizable()
                 .frame(height: 200)
             HStack {
-                Text("About \(name)")
+                Text("About \(name.place_name)")
                     .font(.title)
                     .fontWeight(.bold)
                 Spacer()
@@ -25,7 +25,7 @@ struct PlaceDetailView: View {
             Spacer()
         }
         .padding(.horizontal,5)
-        .navigationTitle(name)
+        .navigationTitle(name.place_name)
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
                 Button {
@@ -38,7 +38,7 @@ struct PlaceDetailView: View {
         }
     }
 }
-
-#Preview {
-    PlaceDetailView()
-}
+//
+//#Preview {
+//    PlaceDetailView()
+//}
