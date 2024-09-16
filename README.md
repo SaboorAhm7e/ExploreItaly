@@ -1,2 +1,2 @@
 # ExploreItaly
-![Screenshots](Screenshots/sc-1.png)
+![sc-1](Screenshots/sc-1.png)
