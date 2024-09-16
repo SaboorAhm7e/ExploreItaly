@@ -11,29 +11,27 @@ struct PlaceItemView: View {
     var image : String = "Rome"
     var name : String = "Florida Meseum Los Angleous NY"
     var body: some View {
-        ZStack(alignment:.top) {
-            Color.white
-            
-            VStack(alignment:.leading,spacing: 1) {
+        ZStack {
+            Color.secondary.opacity(0.5)
+            VStack(alignment:.center,spacing: 0) {
                 Image(image)
                     .resizable()
-                    .scaledToFill()
-                    .frame(width:180,height:180)
+                    
+                    .frame(height:180)
+                
                 Text(name)
-                    .lineLimit(nil)
-                    .lineSpacing(-80)
-                    .multilineTextAlignment(.leading)
-                    .font(.headline)
+                    .font(.title3)
                     .fontWeight(.bold)
-                    .foregroundStyle(Color.black)
-                    .padding(.leading,5)
+                    .foregroundStyle(Color.white)
             }
-           
+            
+            .padding(.bottom,10)
+        
         }
-        .frame(width:180,height:240)
-        .clipped()
-        .cornerRadius(20)
-        .shadow(color:Color.gray.opacity(0.5),radius:10)
+        
+        .clipShape(RoundedRectangle(cornerRadius: 10))
+        .shadow(color: .gray.opacity(0.5), radius: 5,x: 0,y: 0)
+        .padding(3)
     }
 }
 

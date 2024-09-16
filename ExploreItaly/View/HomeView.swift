@@ -8,60 +8,41 @@
 import SwiftUI
 
 struct HomeView: View {
+    @State var mode = false
 
     // MARK: - properties
     let cities : [CityModel] = Bundle.main.decode([CityModel].self, from: "Cities.json")
     let places : [PlaceModel] = Bundle.main.decode([PlaceModel].self, from: "Places.json")
+    @State private var path = [String]()
+    
+    @AppStorage("selectedAppearance") var selectedAppearance : Bool = false
+    @Environment(\.colorScheme) var colorScheme
     // MARK: - body
     var body: some View {
-        NavigationView {
+        NavigationStack(path: $path) {
             ScrollView(.vertical,showsIndicators:false) {
-                VStack {
+                VStack(spacing:5) {
                     // Banner
-                    Image("cover")
-                        .resizable()
-                        .scaledToFit()
+//                    Image("cover")
+//                        .resizable()
+//                        .scaledToFit()
+                    ImageSlider()
+                        .frame(height:180)
                     // Section Header
                     
-                    HStack {
-                        Text("Cities")
-                            .font(.title)
-                            .fontWeight(.bold)
-                        Spacer()
-                        NavigationLink {
-                            CityListingView()
-                        } label: {
-                            HStack {
-                                Text("See All")
-                                Image(systemName: "chevron.right")
-                            }
-                        }
-                        
+                    SectionHeaderView(sectionTitle: "Cities") {
+                        path.append("Cities")
                     }
                     
                     ScrollView(.horizontal,showsIndicators:false) {
                         HStack(spacing:10) {
                             ForEach(0...4,id:\.self) { i in
-                                ZStack(alignment:.bottomLeading) {
-                                    Image(cities[i].city_cover)
-                                        .resizable()
-                                        .clipShape(RoundedRectangle(cornerRadius: 20))
-                                    Text(cities[i].city_name)
-                                        .font(.title2)
-                                        .fontWeight(.bold)
-                                        .fontDesign(.rounded)
-                                        .foregroundStyle(Color.white)
-                                        .shadow(color: .black.opacity(0.7), radius: 10,x:5,y:5)
-                                        .offset(x:10)
-                                }
-                                .frame(width:270,height:100)
-                                .padding(0)
-                                .shadow(color:.black.opacity(0.5),radius: 5,x:5,y:5)
                                 
+                                CityHeroView(image: cities[i].city_cover, name: cities[i].city_name)
                             }
                           
                         }
-                        .padding(.bottom,10)
+                        //.padding(.bottom,10)
                     }
                     
                     
@@ -69,37 +50,30 @@ struct HomeView: View {
                    
                     //PlacesGridView
                     
-                    HStack {
-                        Text("Places")
-                            .font(.title)
-                            .fontWeight(.bold)
-                        Spacer()
-                        NavigationLink {
-                            PlacesGridView()
-                        } label: {
-                            HStack {
-                                Text("See All")
-                                Image(systemName: "chevron.right")
-                            }
-                        }
-                        
+                    SectionHeaderView(sectionTitle: "Places") {
+                        path.append("Places")
                     }
-                    
-                    
-                   
-                    
+
                     ScrollView(.horizontal,showsIndicators:false) {
                         HStack(spacing:10) {
                             ForEach(places,id:\.place_id) { place in
                                 PlaceItemView(image: place.place_cover, name: place.place_name)
+                                    .frame(width:180)
                             }
                         }
-                        .frame(height:260)
+                        .frame(height:230)
                     }
                     
                    
                     
 
+                }
+            }
+            .navigationDestination(for: String.self){ value in
+                if value == "Cities" {
+                    CityListingView()
+                } else if value == "Places" {
+                    PlacesGridView()
                 }
             }
             
@@ -108,9 +82,12 @@ struct HomeView: View {
             .toolbar{
                 ToolbarItem(placement: .topBarTrailing) {
                     Button {
-                        print("dark mode / light mode")
+                        //mode.toggle()
+                        selectedAppearance.toggle()
                     } label: {
-                        Image(systemName: "moon")
+                        Image(systemName: selectedAppearance ? "sun.max" : "moon.stars")
+                            .symbolRenderingMode(.palette)
+                            .symbolEffect(.pulse, options: .default, value: selectedAppearance)
                     }
 
                 }

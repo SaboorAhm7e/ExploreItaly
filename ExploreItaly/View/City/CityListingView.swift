@@ -9,11 +9,12 @@ import SwiftUI
 
 struct CityListingView: View {
     let cities : [CityModel] = Bundle.main.decode([CityModel].self, from: "Cities.json")
+    let places : [PlaceModel] = Bundle.main.decode([PlaceModel].self, from: "Places.json")
     var body: some View {
         List {
             ForEach(cities,id: \.city_id) { city in
                 NavigationLink {
-                    CityDetailView(city: city)
+                    CityDetailView(city: city,places: places)
                 } label: {
                     HStack(alignment:.top) {
                         Image(city.city_cover)

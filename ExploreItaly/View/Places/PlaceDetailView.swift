@@ -32,13 +32,17 @@ struct PlaceDetailView: View {
                     isFavorite.toggle()
                 } label: {
                     Image(systemName: isFavorite ? "heart.fill" : "heart")
+                        .foregroundStyle(isFavorite ? Color.red : Color.primary)
+                        .symbolEffect(.bounce, value: isFavorite)
                 }
 
             }
         }
     }
 }
-//
-//#Preview {
-//    PlaceDetailView()
-//}
+
+#Preview {
+    PlaceDetailView(
+        name: PlaceModel(
+            place_id: 1, city_id: 1, place_name: "", place_cover: "Piazza-Navona-cover", place_lat: "", place_long: "", place_images: [], place_description: ""))
+}

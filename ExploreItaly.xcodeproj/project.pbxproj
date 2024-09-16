@@ -15,13 +15,14 @@
 		D34080F22C8B5F4B00F0061A /* Cities.json in Resources */ = {isa = PBXBuildFile; fileRef = D34080F12C8B5F4B00F0061A /* Cities.json */; };
 		D34080F42C8B614200F0061A /* Bundle+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34080F32C8B614200F0061A /* Bundle+Extension.swift */; };
 		D35503122C8C3995008DEE36 /* CityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35503112C8C3995008DEE36 /* CityModel.swift */; };
+		D369D4332C947EF700CED7E3 /* ImageSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D369D4322C947EF700CED7E3 /* ImageSlider.swift */; };
 		D395A1F02C8212640077E425 /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D395A1EF2C8212640077E425 /* CustomTabBar.swift */; };
 		D395A1F22C822F570077E425 /* FavoriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D395A1F12C822F570077E425 /* FavoriteView.swift */; };
 		D395A1F42C822F640077E425 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D395A1F32C822F640077E425 /* SettingView.swift */; };
 		D395A1F62C822F9F0077E425 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D395A1F52C822F9F0077E425 /* HomeView.swift */; };
-		D39A30462C887337009CD32C /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39A30452C887337009CD32C /* OnboardingView.swift */; };
 		D3B9091E2C884283006358D0 /* PlacesGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B9091D2C884283006358D0 /* PlacesGridView.swift */; };
 		D3B909202C884D06006358D0 /* PlaceDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B9091F2C884D06006358D0 /* PlaceDetailView.swift */; };
+		D3BE305E2C959E8F003737EF /* CityHeroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BE305D2C959E8F003737EF /* CityHeroView.swift */; };
 		D3E061962C848241009D42E1 /* PlaceItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E061952C848241009D42E1 /* PlaceItemView.swift */; };
 		D3E6FB862C8206DB0040319A /* ExploreItalyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E6FB852C8206DB0040319A /* ExploreItalyApp.swift */; };
 		D3E6FB882C8206DB0040319A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E6FB872C8206DB0040319A /* ContentView.swift */; };
@@ -38,13 +39,14 @@
 		D34080F12C8B5F4B00F0061A /* Cities.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Cities.json; sourceTree = "<group>"; };
 		D34080F32C8B614200F0061A /* Bundle+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Extension.swift"; sourceTree = "<group>"; };
 		D35503112C8C3995008DEE36 /* CityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityModel.swift; sourceTree = "<group>"; };
+		D369D4322C947EF700CED7E3 /* ImageSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSlider.swift; sourceTree = "<group>"; };
 		D395A1EF2C8212640077E425 /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
 		D395A1F12C822F570077E425 /* FavoriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteView.swift; sourceTree = "<group>"; };
 		D395A1F32C822F640077E425 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		D395A1F52C822F9F0077E425 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
-		D39A30452C887337009CD32C /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		D3B9091D2C884283006358D0 /* PlacesGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesGridView.swift; sourceTree = "<group>"; };
 		D3B9091F2C884D06006358D0 /* PlaceDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceDetailView.swift; sourceTree = "<group>"; };
+		D3BE305D2C959E8F003737EF /* CityHeroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityHeroView.swift; sourceTree = "<group>"; };
 		D3E061952C848241009D42E1 /* PlaceItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceItemView.swift; sourceTree = "<group>"; };
 		D3E6FB822C8206DB0040319A /* ExploreItaly.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExploreItaly.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3E6FB852C8206DB0040319A /* ExploreItalyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreItalyApp.swift; sourceTree = "<group>"; };
@@ -79,6 +81,8 @@
 				D395A1EF2C8212640077E425 /* CustomTabBar.swift */,
 				D33C038C2C83490100F8728C /* SectionHeaderView.swift */,
 				D3E061952C848241009D42E1 /* PlaceItemView.swift */,
+				D369D4322C947EF700CED7E3 /* ImageSlider.swift */,
+				D3BE305D2C959E8F003737EF /* CityHeroView.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -135,13 +139,12 @@
 		D3E6FB932C8208AD0040319A /* View */ = {
 			isa = PBXGroup;
 			children = (
-				D3B9091C2C88426D006358D0 /* Places */,
-				D3150CF72C85B0A900F7A5F0 /* City */,
 				D3E6FB872C8206DB0040319A /* ContentView.swift */,
+				D395A1F52C822F9F0077E425 /* HomeView.swift */,
+				D3150CF72C85B0A900F7A5F0 /* City */,
+				D3B9091C2C88426D006358D0 /* Places */,
 				D395A1F12C822F570077E425 /* FavoriteView.swift */,
 				D395A1F32C822F640077E425 /* SettingView.swift */,
-				D395A1F52C822F9F0077E425 /* HomeView.swift */,
-				D39A30452C887337009CD32C /* OnboardingView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -256,16 +259,17 @@
 				D34080F42C8B614200F0061A /* Bundle+Extension.swift in Sources */,
 				D395A1F22C822F570077E425 /* FavoriteView.swift in Sources */,
 				D395A1F42C822F640077E425 /* SettingView.swift in Sources */,
+				D3BE305E2C959E8F003737EF /* CityHeroView.swift in Sources */,
 				D3E6FB882C8206DB0040319A /* ContentView.swift in Sources */,
 				D35503122C8C3995008DEE36 /* CityModel.swift in Sources */,
 				D3B9091E2C884283006358D0 /* PlacesGridView.swift in Sources */,
 				D3150CFB2C85B48B00F7A5F0 /* CityDetailView.swift in Sources */,
 				D395A1F62C822F9F0077E425 /* HomeView.swift in Sources */,
 				D3B909202C884D06006358D0 /* PlaceDetailView.swift in Sources */,
+				D369D4332C947EF700CED7E3 /* ImageSlider.swift in Sources */,
 				D33C038D2C83490100F8728C /* SectionHeaderView.swift in Sources */,
 				D3E061962C848241009D42E1 /* PlaceItemView.swift in Sources */,
 				D395A1F02C8212640077E425 /* CustomTabBar.swift in Sources */,
-				D39A30462C887337009CD32C /* OnboardingView.swift in Sources */,
 				D3E6FB862C8206DB0040319A /* ExploreItalyApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

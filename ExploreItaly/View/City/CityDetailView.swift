@@ -10,6 +10,7 @@ import SwiftUI
 struct CityDetailView: View {
     
     var city : CityModel?
+    var places : [PlaceModel] = []
     var body: some View {
         ScrollView(.vertical,showsIndicators: false) {
             VStack {
@@ -48,43 +49,50 @@ struct CityDetailView: View {
                     
                 }
                
-                HStack {
-                    Text("Places in \(city?.city_name ?? "")")
-                        .font(.title)
-                        .fontWeight(.bold)
-                    Spacer()
-                    NavigationLink {
-                        CityListingView()
-                    } label: {
-                        HStack {
-                            Text("See All")
-                            Image(systemName: "chevron.right")
-                        }
-                        .tint(Color.blue)
-                    }
-                    
-                }
-                ScrollView(.horizontal,showsIndicators: false) {
-                    HStack(spacing:15) {
-                        ForEach(0...4,id: \.self) { item in
-                            VStack(alignment:.leading,spacing: 0) {
-                                Image("Venice")
-                                    .resizable()
-                                    .frame(width:90,height: 90)
-                                    .clipped()
-                                Text("Lorem ipsum dolor sit")
-                                    .lineLimit(2)
-                                    .lineSpacing(-10)
-                                    .padding(.leading,2)
+               
+                if !places.isEmpty {
+                    HStack {
+                        Text("Places in \(city?.city_name ?? "")")
+                            .font(.title)
+                            .fontWeight(.bold)
+                        Spacer()
+                        NavigationLink {
+                            CityListingView()
+                        } label: {
+                            HStack {
+                                Text("See All")
+                                Image(systemName: "chevron.right")
                             }
-                            .frame(width:90)
-                            .background(
-                                RoundedRectangle(cornerRadius: 10).stroke()
-                                    
-                            )
-                            .clipped()
+                            .tint(Color.blue)
                         }
+                        
                     }
+                    ScrollView(.horizontal,showsIndicators: false) {
+                        HStack(spacing:15) {
+                            ForEach(places,id: \.place_name) { item in
+                                VStack(alignment:.leading,spacing: 0) {
+                                    Image(item.place_cover)
+                                        .resizable()
+                                    Text(item.place_name)
+                                        .padding(.leading,2)
+                                       // .foregroundStyle(Color.white)
+                                        .frame(height:30)
+                                        .font(.system(size: 14))
+                                }
+                                
+                                .frame(width:90,height: 130)
+                                .background {
+                                    Color.secondary.opacity(0.5)
+                                }
+                                .cornerRadius(10)
+                               
+                            }
+                        }
+                        
+                        .clipped()
+                    }
+                } else {
+                    EmptyView()
                 }
               
               
@@ -98,6 +106,6 @@ struct CityDetailView: View {
     }
 }
 
-//#Preview {
-//    CityDetailView()
-//}
+#Preview {
+    CityDetailView()
+}

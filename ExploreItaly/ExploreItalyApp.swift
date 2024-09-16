@@ -9,15 +9,11 @@ import SwiftUI
 
 @main
 struct ExploreItalyApp: App {
-    @AppStorage("showsOnboarding") var showOnboarding : Bool = true
+    @AppStorage("selectedAppearance") var selectedAppearance : Bool = false
     var body: some Scene {
         WindowGroup {
-            if showOnboarding {
-                OnboardingView()
-            } else {
-                ContentView()
-            }
-            
+            ContentView()
+                .preferredColorScheme(selectedAppearance ? .dark : .light)
         }
     }
 }

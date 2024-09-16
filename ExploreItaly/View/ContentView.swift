@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @AppStorage("showTabBar") var showTabBar : Bool = true
+    
     @State private var currentIndex : Int = 1
     var body: some View {
         
