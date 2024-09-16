@@ -1,2 +1,2 @@
 # ExploreItaly
-![sc-1](Screenshots/sc-1.png)
+<img src="Screenshots/sc-1.png" width="200px"/>
