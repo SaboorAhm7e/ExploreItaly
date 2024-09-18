@@ -37,8 +37,13 @@ struct HomeView: View {
                     ScrollView(.horizontal,showsIndicators:false) {
                         HStack(spacing:10) {
                             ForEach(0...4,id:\.self) { i in
+                                NavigationLink {
+                                    CityDetailView(city: cities[i], places: places)
+                                } label: {
+                                    CityHeroView(image: cities[i].city_cover, name: cities[i].city_name)
+                                }
+
                                 
-                                CityHeroView(image: cities[i].city_cover, name: cities[i].city_name)
                             }
                           
                         }
@@ -57,8 +62,14 @@ struct HomeView: View {
                     ScrollView(.horizontal,showsIndicators:false) {
                         HStack(spacing:10) {
                             ForEach(places,id:\.place_id) { place in
-                                PlaceItemView(image: place.place_cover, name: place.place_name)
-                                    .frame(width:180)
+                                NavigationLink {
+                                    PlaceDetailView(name: place)
+                                } label: {
+                                    
+                                    PlaceItemView(image: place.place_cover, name: place.place_name)
+                                        .frame(width:180)
+                                }
+
                             }
                         }
                         .frame(height:230)

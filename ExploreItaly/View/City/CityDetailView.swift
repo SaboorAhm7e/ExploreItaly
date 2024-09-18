@@ -70,21 +70,26 @@ struct CityDetailView: View {
                     ScrollView(.horizontal,showsIndicators: false) {
                         HStack(spacing:15) {
                             ForEach(places,id: \.place_name) { item in
-                                VStack(alignment:.leading,spacing: 0) {
-                                    Image(item.place_cover)
-                                        .resizable()
-                                    Text(item.place_name)
-                                        .padding(.leading,2)
-                                       // .foregroundStyle(Color.white)
-                                        .frame(height:30)
-                                        .font(.system(size: 14))
+                                NavigationLink {
+                                    PlaceDetailView(name: item)
+                                } label: {
+                                    VStack(alignment:.leading,spacing: 0) {
+                                        Image(item.place_cover)
+                                            .resizable()
+                                        Text(item.place_name)
+                                            .padding(.leading,2)
+                                           // .foregroundStyle(Color.white)
+                                            .frame(height:30)
+                                            .font(.system(size: 14))
+                                    }
+                                    
+                                    .frame(width:90,height: 130)
+                                    .background {
+                                        Color.secondary.opacity(0.5)
+                                    }
+                                    .cornerRadius(10)
                                 }
-                                
-                                .frame(width:90,height: 130)
-                                .background {
-                                    Color.secondary.opacity(0.5)
-                                }
-                                .cornerRadius(10)
+
                                
                             }
                         }
